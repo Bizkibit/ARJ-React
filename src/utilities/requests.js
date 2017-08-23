@@ -39,3 +39,37 @@ export const Organization = {
     ).then(res => res.json());
   }
 }
+
+export const User = {
+
+  getAll() {
+    return fetch(
+      `${DOMAIN}${API_PATH}/users`,
+      {
+        method: 'GET',
+        headers: {'Authorization': API_KEY}
+      }
+    ).then(res => res.json());
+  },
+  get (id) {
+    return fetch(
+      `${DOMAIN}${API_PATH}/users/${id}`,
+      {
+        headers: {'Authorization': API_KEY}
+      }
+    ).then(res => res.json());
+  },
+  post (attributes) {
+    return fetch(
+      `${DOMAIN}${API_PATH}/users/`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': API_KEY
+        },
+        body: JSON.stringify(attributes)
+      }
+    ).then(res => res.json());
+  }
+}

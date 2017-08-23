@@ -1,37 +1,28 @@
 import React from 'react'
-import {Organization} from '../utilities/requests'
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link
+} from 'react-router-dom';
+import {OrganizationsIndexPage} from './pages/OrganizationsIndexPage'
 
-export class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      organizations: []
-    }
-  }
+export const App = function() {
 
-  componentDidMount () {
-    Organization
-    .getAll()
-    .then((organizations) => {
-      this.setState({organizations})
-    })
-  }
+  return  (
+    <Router>
+      <div className="App">
+        <nav>
+          <Link to='/'>Home</Link> |
+          <Link to='/organizations'>Organizations</Link> |
+        </nav>
+        <br />
 
-  render()  {
-    let {organizations} = this.state;
-    // let orgs = organizations.map((organization) => {
-    //   return (<li key={organization.id}>{organization.name}</li>)
-    // })
-
-    return  (
-      <div className='organization list'>
-        <h1>Organizations</h1>
-        <ul>
-          {organizations.map((organization) => {
-            return (<li key={organization.id}>{organization.name}</li>)
-          })}
-        </ul>
+        <Switch>
+          <Route exact path="/" component={OrganizationsIndexPage} />
+          <Route exact path="/organizations" component={OrganizationsIndexPage} />
+        </Switch>
       </div>
-    )
-  }
+    </Router>
+  )
 }
