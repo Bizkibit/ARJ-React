@@ -5,6 +5,7 @@ import {
   Switch,
   Link
 } from 'react-router-dom';
+import {HomePage} from './pages/HomePage'
 import {OrganizationsIndexPage} from './pages/OrganizationsIndexPage'
 
 export const App = function() {
@@ -16,10 +17,9 @@ export const App = function() {
           <Link to='/'>Home</Link> |
           <Link to='/organizations'>Organizations</Link> |
         </nav>
-        <br />
-
+        <hr />
         <Switch>
-          <Route exact path="/" component={OrganizationsIndexPage} />
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/organizations" component={OrganizationsIndexPage} />
         </Switch>
       </div>

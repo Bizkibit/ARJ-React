@@ -9,7 +9,7 @@ export class OrganizationsIndexPage extends React.Component {
     }
   }
 
-  componentDidMount () {
+  componentWillMount () {
     Organization
     .getAll()
     .then((organizations) => {
