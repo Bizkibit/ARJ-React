@@ -5,6 +5,14 @@ import {
   Switch,
   Link
 } from 'react-router-dom';
+import  {
+  Button,
+  Card,
+  Row,
+  Col,
+  Navbar,
+  NavItem
+} from 'react-materialize'
 import {HomePage} from './pages/HomePage'
 import {OrganizationsIndexPage} from './pages/OrganizationsIndexPage'
 
@@ -13,11 +21,10 @@ export const App = function() {
   return  (
     <Router>
       <div className="App">
-        <nav>
-          <Link to='/'>Home</Link> |
-          <Link to='/organizations'>Organizations</Link> |
-        </nav>
-        <hr />
+        <Navbar className='brown lighten-3' brand='FinalProject' right>
+          <NavItem><Link to='/'>Home</Link></NavItem>
+          <NavItem><Link to='/organizations'>Organizations</Link></NavItem>
+        </Navbar>
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/organizations" component={OrganizationsIndexPage} />
