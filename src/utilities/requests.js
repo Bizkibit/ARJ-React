@@ -2,9 +2,9 @@
 // 2. Allow CORS (Cross Origin Resource Sharing) on our backend server. We setup
 //    the `rack-cors` on Awesome Answers to accomplish this.
 
-const DOMAIN = 'http://localhost:3000';
+const DOMAIN = 'http://arj-project.herokuapp.com';
 const API_PATH = '/api/v1';
-const API_KEY = 'Apikey 97e126ea44f00609c54c379e390798be27688e03c02c4ee66103054413c714bf';
+const API_KEY = 'Apikey 84a3cabac41f4e46469f6584773f4e4cf5aa5e85f4199e53733a4eba79406e28';
 
 export const Organization = {
 
