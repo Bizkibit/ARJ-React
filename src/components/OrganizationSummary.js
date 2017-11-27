@@ -5,7 +5,7 @@ function OrganizationSummary (props) {
   const {id, name} = props;
   return (
     <div className='OrganizationSummary'>
-      <Link to={`/questions/${id}`}>{name}</Link>
+      <Link to={`/organizations/${id}`}>{name}</Link>
     </div>
   );
 };

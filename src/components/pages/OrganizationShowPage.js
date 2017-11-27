@@ -7,7 +7,7 @@ class OrganizationShowPage extends Component {
     super(props);
 
     this.state =  {
-      organizations: {}
+      organization: {}
     };
   }
 
@@ -16,12 +16,12 @@ class OrganizationShowPage extends Component {
 
     Organization
       .get(id)
-      .then(question => this.setState({question}));
+      .then(organization => this.setState({organization}));
   }
   render()  {
     return (
       <div className='OrganizationShowPage'>
-        <OrganizationDetails {...this.state.question} />
+        <OrganizationDetails {...this.state.organization} />
       </div>
     );
   }

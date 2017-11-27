@@ -1,27 +1,39 @@
 import React from 'react';
+import {Redirect} from 'react-router-dom';
 
 function OrganizationDetails (props) {
-  // const {id, title, body, answers = [], author = {}} = props;
-  //
-  // return (
-  //   <div className='QuestionDetails'>
-  //     <h2>{title}</h2>
-  //     <p>{body}</p>
-  //     <p><em>By {author.first_name} {author.last_name}</em></p>
-  //     <h3>Answers</h3>
-  //     <ul className='AnswerList'>
-  //       {
-  //         answers.map(
-  //           answer => (
-  //             <li key={answer.id}>
-  //               {answer.body}
-  //             </li>
-  //           )
-  //         )
-  //       }
-  //     </ul>
-  //   </div>
-  // )
+  const {id, name, website, applications = [], applicants = [], events = [], reviews = []} = props;
+
+  return (
+    <div className='OrganizationDetails'>
+      <h2>{name}</h2>
+      <h3>Applications</h3>
+      <ul className='ApplicationList'>
+        {
+          applications.map(
+            application => (
+              <li key={application.id}>
+                {application.detail}
+              </li>
+            )
+          )
+        }
+      </ul>
+      <br/>
+      <h3>Applicants</h3>
+      <ul className="ApplicantList">
+        {
+          applicants.map(
+            applicant => (
+              <li key={applicant.id}>
+                {applicant.first_name} {applicant.last_name}
+              </li>
+            )
+          )
+        }
+      </ul>
+    </div>
+  )
 }
 
 export default OrganizationDetails;

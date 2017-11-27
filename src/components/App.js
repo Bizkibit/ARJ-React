@@ -29,7 +29,7 @@ export const App = function() {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/organizations" component={OrganizationsIndexPage} />
-          <Route exact path="/organizations/:id" component={OrganizationsIndexPage} />
+          <Route exact path="/organizations/:id" component={OrganizationShowPage} />
         </Switch>
       </div>
     </Router>
