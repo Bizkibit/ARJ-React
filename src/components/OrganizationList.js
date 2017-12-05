@@ -8,7 +8,7 @@ function OrganizationList (props) {
     <div className='QuestionList'>
       {
         organizations.map(
-          organization => <OrganizationSummary key={organization.id} {...organization} />
+          organization => <tr><OrganizationSummary key={organization.id} {...organization} /></tr>
         )
       }
     </div>
