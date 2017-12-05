@@ -13,9 +13,10 @@ import  {
   Navbar,
   NavItem
 } from 'react-materialize'
-import {HomePage} from './pages/HomePage'
-import OrganizationsIndexPage from './pages/OrganizationsIndexPage'
-import OrganizationShowPage from './pages/OrganizationShowPage'
+import {HomePage} from './pages/HomePage';
+import OrganizationsIndexPage from './pages/OrganizationsIndexPage';
+import OrganizationShowPage from './pages/OrganizationShowPage';
+import OrganizationNewPage from './pages/OrganizationNewPage';
 
 export const App = function() {
 
@@ -30,6 +31,7 @@ export const App = function() {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/organizations" component={OrganizationsIndexPage} />
           <Route exact path="/organizations/:id" component={OrganizationShowPage} />
+          <Route exact path="/organizations/new" component={OrganizationNewPage} />
         </Switch>
       </div>
     </Router>
